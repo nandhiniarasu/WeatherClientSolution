@@ -1,0 +1,65 @@
+﻿@model IEnumerable<WeatherClientProject.Models.WeatherFC>
+
+@{
+    ViewData["Title"] = "GetWeatherForCity";
+}
+
+<h1>GetWeatherForCity</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.City)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HighTemp)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LowTemp)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ForeCast)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.City)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HighTemp)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LowTemp)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ForeCast)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
